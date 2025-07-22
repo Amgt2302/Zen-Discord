@@ -5,13 +5,10 @@
 */
 
 /* Background */
-.appMount_a82248,
 .layers__1c917,
-.base_c0676e,
+.base__3e6af,
 .theme-dark,
-.theme-light,
-.scroller_a667a5,
-.scroller__15ea5 {
+.theme-light {
   background: none !important;
 }
 
@@ -20,9 +17,8 @@
 ║  * Style  Discord * ║
 ╚═════════════════════╝
 */
-
-#app-mount,
-.app_a667a5 {
+/* Background */
+#app-mount {
   background-image: var(--background-image);
   background-size: cover;
   background-position: center;

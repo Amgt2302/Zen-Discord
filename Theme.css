@@ -1,16 +1,7 @@
+@import url("https://amgt2302.github.io/Zen-Discord/Import.css");
+
 :root {
   --background-image: url("https://images.pexels.com/photos/1473215/pexels-photo-1473215.jpeg");
   --opacity-amount: 0.3;
   --blur-amount: 0px;
-}
-
-#app-mount,
-.app_a667a5 {
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: rgba(0, 0, 0, var(--opacity-amount));
-  filter: blur(var(--blur-amount));
 }

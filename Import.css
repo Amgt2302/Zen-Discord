@@ -20,3 +20,14 @@
 ║  * Style  Discord * ║
 ╚═════════════════════╝
 */
+
+#app-mount,
+.app_a667a5 {
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, var(--opacity-amount));
+  filter: blur(var(--blur-amount));
+}

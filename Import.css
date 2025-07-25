@@ -1,10 +1,9 @@
-/* 
-╔═════════════════════╗
-║  * Hidden Discord * ║
-╚═════════════════════╝
+/*
+╔═════════════════════════╗
+║      Hidden Discord     ║
+╚═════════════════════════╝
 */
 
-/* Background */
 .layers__1c917,
 .base__3e6af,
 .theme-dark,
@@ -12,13 +11,14 @@
   background: none !important;
 }
 
-/* 
-╔═════════════════════╗
-║  * Style  Discord * ║
-╚═════════════════════╝
+/*
+╔═════════════════════════╗
+║      Style Discord      ║
+╚═════════════════════════╝
 */
-/* Background */
-#app-mount {
+
+#app-mount,
+.app_a667a5 {
   background-image: var(--background-image);
   background-size: cover;
   background-position: center;

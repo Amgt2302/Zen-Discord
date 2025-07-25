@@ -1,20 +1,5 @@
 /*
 ╔═════════════════════════╗
-║      Hidden Discord     ║
-╚═════════════════════════╝
-*/
-
-.theme-dark,
-.theme-light,
-.appMount_a82248,
-.layers__1c917,
-.base__3e6af,
-.scroller__15ea5 {
-  background: none !important;
-}
-
-/*
-╔═════════════════════════╗
 ║      Style Discord      ║
 ╚═════════════════════════╝
 */
@@ -29,5 +14,38 @@
   height: 100vh;
   background: var(--background-image) center/cover no-repeat fixed;
   opacity: var(--opacity-amount);
-  z-index: -1;
+  z-index: 1000;
+}
+
+/* En Cours */
+.itemsContainer_ef3116 { /*server nav*/
+  background: red;
+}
+
+div[data-jump-section="global"] { /*friend bar*/
+  background: orangered;
+}
+
+section[aria-label="Zone utilisateur"] { /*bloc user*/
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+section[aria-label="Zone utilisateur"]:hover {
+  transform: translateY(-10px);
+  opacity: 0.9;
+}
+
+.online-tab {
+  background: yellow;
+}
+
+
+main.container__133bf {
+  background: greenyellow !important;
+}
+aside.container__7d20c {
+  background: rgb(77, 11, 77) !important;
+}
+
+span {
+  background: lightsalmon;
 }

@@ -8,7 +8,7 @@
 @import url("https://amgt2302.github.io/Zen-Discord/Import.css");
 
 :root {
-  --background-image: url("https://images.pexels.com/photos/1473215/pexels-photo-1473215.jpeg");
-  --opacity-amount: 0.3;
-  --blur-amount: 0px;
+  --background-image: url("https://i.imgur.com/IrDCWPa.jpeg");
+  --opacity-amount: 0.25;
+  --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }

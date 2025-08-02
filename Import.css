@@ -1,47 +1,102 @@
+/*@import url("https://amgt2302.github.io/Zen-Discord/Import.css");*/
+/*
+╭───────── Zen Discord ─────────╮
+│  Version: V1.0                │
+│  Author : AMGT2302            │
+│  GitHub : github.com/AMGT2302 │
+╰───────────────────────────────╯
+*/
 /*
 ╔═════════════════════════╗
 ║      Style Discord      ║
 ╚═════════════════════════╝
 */
 
+/* Animation */
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes swing {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+@keyframes jump {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-5px);}
+  100% {transform: translateY(0);}
+}
+
 /* Background */
 #app-mount::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background: var(--background-image) center/cover no-repeat fixed;
   opacity: var(--opacity-amount);
+  pointer-events: none;
   z-index: 1000;
 }
 
 /* En Cours */
 .itemsContainer_ef3116 { /*server nav*/
-  background: red;
+
 }
 
 div[data-jump-section="global"] { /*friend bar*/
-  background: orangered;
+  background: rgb(240, 105, 57);
 }
 
 section[aria-label="Zone utilisateur"] { /*bloc user*/
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 section[aria-label="Zone utilisateur"]:hover {
   transform: translateY(-10px);
   opacity: 0.9;
 }
 
-.online-tab {
+/* Micro */
+.buttons__37e49 > div:nth-of-type(1) > button:hover {
+  animation: jump 0.8s linear infinite;
+  animation-play-state: running;
+  animation-duration: calc(var(--animations-enabled) * 0.8s);
+}
+
+/* HeadSet Button */
+.buttons__37e49 > button:nth-of-type(1):hover {
+  animation: swing 0.3s ease-in-out infinite;
+  animation-play-state: running;
+  animation-duration: calc(var(--animations-enabled) * 0.3s);
+}
+
+/* Setting Button */
+.buttons__37e49 > button:nth-of-type(2):hover {
+  animation: spin 1s linear infinite;
+  animation-play-state: running;
+  animation-duration: calc(var(--animations-enabled) * 1s);
+}
+
+
+
+
+
+
+
+
+#online-tab {
   background: yellow;
 }
 
 
-main.container__133bf {
-  background: greenyellow !important;
-}
+
+
+
 aside.container__7d20c {
   background: rgb(77, 11, 77) !important;
 }
@@ -49,3 +104,12 @@ aside.container__7d20c {
 span {
   background: lightsalmon;
 }
+
+/* Setting Section */
+nav.sidebar__23e6b {
+  background-color: rgb(255, 0, 0);
+  filter: brightness(1.5);
+}
+
+
+/* backdrop-filter: none; /* désactive les flous si besoin */

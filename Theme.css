@@ -9,6 +9,6 @@
 
 :root {
   --background-image: url("https://i.imgur.com/IrDCWPa.jpeg");
-  --opacity-amount: 0.25;
+  --opacity: 0.25;
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }

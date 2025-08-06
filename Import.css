@@ -34,3 +34,27 @@
   pointer-events: none;
   z-index: 102;
 }
+
+/* User */
+
+/* Icon */
+/* Micro */
+.buttons__37e49 > div:nth-of-type(1) > button:hover {
+  animation: jump 0.8s linear infinite;
+  animation-play-state: running;
+  animation-duration: calc(var(--animations-enabled) * 0.8s);
+}
+
+/* HeadSet Button */
+.buttons__37e49 > button:nth-of-type(1):hover {
+  animation: swing 0.3s ease-in-out infinite;
+  animation-play-state: running;
+  animation-duration: calc(var(--animations-enabled) * 0.3s);
+}
+
+/* Setting Button */
+.buttons__37e49 > button:nth-of-type(2):hover {
+  animation: spin 1s linear infinite;
+  animation-play-state: running;
+  animation-duration: calc(var(--animations-enabled) * 1s);
+}

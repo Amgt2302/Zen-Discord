@@ -8,31 +8,31 @@
 
 ## 📦 Installation
 
-> ⚠️ Nécessite [BetterDiscord](https://betterdiscord.app/) installé au préalable.
+> ⚠️ Nécessite [Vencord](https://vencord.dev/download/) installé au préalable !
 
 1. Ouvre Discord.
-2. Va dans les **Paramètres utilisateur** → **BetterDiscord** → **"Paramètres de thème"**.
-3. Clique sur **"Ouvrir le dossier des thèmes"**.
-4. Télécharge [`theme.css`](https://amgt2302.github.io/Zen-Discord/Theme.css) et place-le dans ce dossier.
-5. Active le thème depuis la liste des thèmes dans Discord.
-
----
-
-## ⚡ Version Quick CSS (alternative rapide)
-
-1. Va dans **Paramètres utilisateur** → **BetterDiscord** → **Quick CSS**.
-2. Copie-colle **tout le contenu** de `theme.css`.
-3. Enregistre. Le thème est actif immédiatement.
+2. Va dans les **Paramètres utilisateur** → **vencord** → **"Theme"** → **Edit QuickCSS**.
+3. Copie-colle **tout le contenu** de [Theme.css](https://amgt2302.github.io/Zen-Discord/Theme.css).
 
 ---
 
 ## 🎨 Personnalisation
 
-Dans `theme.css`, tu peux modifier ces variables :
+Dans `Theme.css`, tu peux modifier ces variables :
 
 ```css
+/*
+╭───────── Zen Discord ─────────╮
+│  Version: V1.0                │
+│  Author : AMGT2302            │
+│  GitHub : github.com/AMGT2302 │
+╰───────────────────────────────╯
+*/
+@import url("https://amgt2302.github.io/Zen-Discord/Import.css");
+
 :root {
-  --background-image: url("https://i.imgur.com/DGg7uYB.jpeg");
-  --opacity-amount: 0.25;
+  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg"); /*Your Background Url*/
+  --opacity: 0.25; /*Default 0.25*/
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }
+```

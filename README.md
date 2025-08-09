@@ -11,14 +11,8 @@
 > ⚠️ Nécessite [Vencord](https://vencord.dev/download/) installé au préalable !
 
 1. Ouvre Discord.
-2. Va dans les **Paramètres utilisateur** → **vencord** → **"Theme"** → **Edit QuickCSS**.
-3. Copie-colle **tout le contenu** de [Theme.css](https://amgt2302.github.io/Zen-Discord/Theme.css).
-
----
-
-## 🎨 Personnalisation
-
-Dans `Theme.css`, tu peux modifier ces variables :
+2. Va dans les **"Paramètres utilisateur"** → **"vencord"** → **"Theme"** → **"Edit QuickCSS"**.
+3. Copie-colle **tout le contenu** ci-dessous :
 
 ```css
 /*
@@ -31,7 +25,22 @@ Dans `Theme.css`, tu peux modifier ces variables :
 @import url("https://amgt2302.github.io/Zen-Discord/Import.css");
 
 :root {
-  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg"); /*Your Background Url*/
+  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg");
+  --opacity: 0.25;
+  --animations-enabled: 1;
+}
+```
+Ou [clic ici](https://amgt2302.github.io/Zen-Discord/Theme.css)
+
+---
+
+## 🎨 Personnalisation
+
+Dans `Theme.css`, tu peux modifier ces variables dans :
+
+```css
+:root {
+  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg"); /*Background Url*/
   --opacity: 0.25; /*Default 0.25*/
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }

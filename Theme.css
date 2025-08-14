@@ -10,5 +10,8 @@
 :root {
   --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg");
   --opacity: 0.25;
-  --animations-enabled: 1;
+  --blur: 5px;
+  --Color: rgba(0, 0, 0, 1);
+
+  --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }

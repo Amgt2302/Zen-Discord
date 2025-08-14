@@ -4,6 +4,7 @@
 ╚═════════════════════════╝
 */
 
+
 /* Animation */
 @keyframes spin {
   0%   { transform: rotate(0deg); }
@@ -22,39 +23,102 @@
   100% {transform: translateY(0);}
 }
 
+@keyframes float {
+  0%, 100%  { transform: rotateZ(2deg); }
+  50%  { transform: rotateZ(-2deg); }
+}
+
+@keyframes RainbowBorder {
+  0%, 100%  { border-color: red; }
+  14%  { border-color: orange; }
+  28%  { border-color: yellow; }
+  42%  { border-color: green; }
+  57%  { border-color: cyan; }
+  71%  { border-color: blue; }
+  85%  { border-color: violet; }
+}
+@keyframes RainbowShadow {
+  0%, 100%  { box-shadow: 0 0 6px 2px red; }
+  14%  { box-shadow: 0 0 6px 2px orange; }
+  28%  { box-shadow: 0 0 6px 2px yellow; }
+  42%  { box-shadow: 0 0 6px 2px green; }
+  57%  { box-shadow: 0 0 6px 2px cyan; }
+  71%  { box-shadow: 0 0 6px 2px blue; }
+  85%  { box-shadow: 0 0 6px 2px violet; }
+}
+
+
 /* Background */
-#app-mount::before {
+#app-mount::after{
   content: "";
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
   background: var(--background-image) center/cover no-repeat fixed;
   opacity: var(--opacity);
+  z-index: 100;
   pointer-events: none;
-  z-index: 102;
 }
 
-/* User */
 
-/* Icon */
+/* Black Background */
+/* Friend Page*/
+nav.wrapper_ef3116,
+.scroller__99e7c,
+.peopleColumn__133bf,
+aside.container__7d20c,
+
+/* Server Page*/
+.scroller__629e4,
+.container_c8ffbb,
+
+/* Chat */
+main.chatContent_f75fb0,
+.none_d125d2,
+.footer__7f9c0,
+
+/* Other */
+.bar_c38106
+{
+  background: var(--Color);
+}
+
+
+/* |--User area--| */
+.panels_c48ade {
+  background: transparent;
+  z-index: 101;
+  backdrop-filter: blur(20px);
+}
+.panels_c48ade:hover {
+  animation: 
+  RainbowBorder calc(var(--animations-enabled) * 15s) linear infinite
+  ,RainbowShadow calc(var(--animations-enabled) * 15s) linear infinite;
+  
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+.avatarWrapper__37e49:hover{
+  animation: float calc(var(--animations-enabled) * 2s) linear infinite ;
+}
+
 /* Micro */
 .buttons__37e49 > div:nth-of-type(1) > button:hover {
-  animation: jump 0.8s linear infinite;
-  animation-play-state: running;
-  animation-duration: calc(var(--animations-enabled) * 0.8s);
+  animation: jump calc(var(--animations-enabled) * 0.8s) linear infinite;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
 }
 
 /* HeadSet Button */
 .buttons__37e49 > button:nth-of-type(1):hover {
-  animation: swing 0.3s ease-in-out infinite;
-  animation-play-state: running;
-  animation-duration: calc(var(--animations-enabled) * 0.3s);
+  animation: swing calc(var(--animations-enabled) * 0.3s) ease-in-out infinite;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
 }
 
 /* Setting Button */
 .buttons__37e49 > button:nth-of-type(2):hover {
-  animation: spin 1s linear infinite;
-  animation-play-state: running;
-  animation-duration: calc(var(--animations-enabled) * 1s);
+  animation: spin calc(var(--animations-enabled) * 1s) linear infinite;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
 }

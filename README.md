@@ -10,9 +10,9 @@
 
 > ⚠️ Nécessite [Vencord](https://vencord.dev/download/) installé au préalable !
 
-1. Ouvre Discord.
-2. Va dans les **"Paramètres utilisateur"** → **"vencord"** → **"Theme"** → **"Edit QuickCSS"**.
-3. Copie-colle **tout le contenu** ci-dessous :
+  1. Ouvre Discord. 
+  2. Va dans les **"Paramètres utilisateur"** → **"vencord"** → **"Theme"** → **"Edit QuickCSS"**.
+  3. Copie-colle **tout le contenu** ci-dessous :
 
 ```css
 /*
@@ -30,7 +30,7 @@
   --animations-enabled: 1;
 }
 ```
-Ou [clic ici](https://amgt2302.github.io/Zen-Discord/Theme.css)
+Ou [clic ici](https://amgt2302.github.io/Zen-Discord/Theme.css).
 
 ---
 

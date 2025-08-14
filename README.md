@@ -27,7 +27,10 @@
 :root {
   --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg");
   --opacity: 0.25;
-  --animations-enabled: 1;
+  --blur: 5px;
+  --Color: rgba(0, 0, 0, 1);
+
+  --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }
 ```
 Ou [clic ici](https://amgt2302.github.io/Zen-Discord/Theme.css).
@@ -42,6 +45,9 @@ Dans `Theme.css`, tu peux modifier ces variables dans :
 :root {
   --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg"); /*Background Url*/
   --opacity: 0.25; /*Default 0.25*/
+  --blur: 5px; /*adjust blur*/
+  --Color: rgba(0, 0, 0, 1); /*Filter Color*/
+
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }
 ```

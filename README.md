@@ -53,3 +53,23 @@ Dans `Theme.css`, tu peux modifier ces variables dans :
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }
 ```
+
+## 📄 Credits & Rights
+
+**Made by :** Amgt2302  
+**Realization :** 2025
+
+🛡️ *This project is an original creation.*
+
+It is shared publicly for discovery, inspiration, or demonstration purposes.  
+However, **any reuse, modification, or redistribution of the code** is prohibited.  
+**Any commercial use or resale** is prohibited.
+
+
+Have fun, but remember to respect the copyright and don't remove it! 😄
+
+---
+
+```
+All rights reserved © Amgt2302 - 2025
+```

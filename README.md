@@ -29,6 +29,7 @@
   --opacity: 0.25;
   --blur: 2.5px;
   --Color: rgba(0, 0, 0, 1);
+  --Color2: rgba(160, 20, 220, 0.8);
 
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }
@@ -47,6 +48,7 @@ Dans `Theme.css`, tu peux modifier ces variables dans :
   --opacity: 0.25; /*Default 0.25*/
   --blur: 2.5px; /*Adjust Blur*/
   --Color: rgba(0, 0, 0, 1); /*Filter Color*/
+  --Color2: rgba(160, 20, 220, 0.8); /*Border color*/
 
   --animations-enabled: 1; /* 1 = ON, 0 = OFF */
 }

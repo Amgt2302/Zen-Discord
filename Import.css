@@ -100,7 +100,8 @@ main.chatContent_f75fb0,
 
 
 /* |--User area--| */
-[class^="panels_"] {
+[class^="panels_"],
+[class^="panel__"] {
   background: transparent;
   z-index: 102;
   backdrop-filter: blur(20px);
@@ -161,6 +162,27 @@ main.chatContent_f75fb0,
 
 
 
+/* |--Menu PopUp--|*/
+/*Camera Menu*/
+.root__49fc1, .footer__49fc1, 
+
+/*Ping menu*/
+.container__50387,
+
+/*Voice Details*/
+[class^="contentWrapper__"],
+
+/*Noise PopUp*/
+[class^="noiseCancellationPopout_"],
+
+/*Sound Box*/
+[class^="picker__"] {
+  background: transparent;
+  backdrop-filter: blur(15px);
+}
+
+
+
 /* |--Other--| */
 /* ShearchBar Effect */
 [class^="searchBar__"]:focus-within {
@@ -173,6 +195,9 @@ main.chatContent_f75fb0,
 .container_e45859 a{
   color: rgb(255, 255, 255);
 }
-nav[class^="sidebar__"]{
-  filter: brightness(1.5);
+
+/*Border*/
+[class^="border__"] {
+  border: solid var(--Color2) 3px;
+  border-radius: 8px;
 }

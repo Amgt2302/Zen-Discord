@@ -96,6 +96,9 @@ main.chatContent_f75fb0,
 {
   background: var(--Color);
 }
+.chatGradientBase__36d07 {
+  display: none;
+}
 
 
 
@@ -148,7 +151,8 @@ main.chatContent_f75fb0,
 
 /* Send Bar */
 [class^="form_"] {
-  transform: translateY(10px);
+  transform: translateY(18px);
+  min-height: 80px;
 }
 
 [class^="scrollableContainer__"]:focus-within {

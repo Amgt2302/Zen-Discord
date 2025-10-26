@@ -151,8 +151,7 @@ main.chatContent_f75fb0,
 
 /* Send Bar */
 [class^="form_"] {
-  transform: translateY(18px);
-  min-height: 80px;
+  margin-top: 1px;
 }
 
 [class^="scrollableContainer__"]:focus-within {

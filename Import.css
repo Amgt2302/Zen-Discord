@@ -97,7 +97,7 @@ main.chatContent_f75fb0,
   background: var(--Color);
 }
 
-[class^="chatGradient__"] /*Nitro apparence Discord Disable*/
+.chatGradientBase__36d07
 {
   display: none;
 }

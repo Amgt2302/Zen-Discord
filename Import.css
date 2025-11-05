@@ -96,7 +96,8 @@ main.chatContent_f75fb0,
 {
   background: var(--Color);
 }
-[class^="chatGradientBase__"]
+
+[class^="chatGradient__"] /*Nitro apparence Discord Disable*/
 {
   display: none;
 }
@@ -149,12 +150,6 @@ main.chatContent_f75fb0,
   z-index: 102;
   backdrop-filter: blur(var(--blur));
 }
-/* User mention menu */
-[class^="autocomplete__"] {
-  z-index: 102;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(var(--blur));
-}
 
 /* Send Bar */
   [class^="form_"] {
@@ -189,6 +184,13 @@ main.chatContent_f75fb0,
 [class^="picker__"] {
   background: transparent;
   backdrop-filter: blur(15px);
+}
+
+/* User mention menu */
+[class^="autocomplete__"] {
+  z-index: 102;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--blur));
 }
 
 

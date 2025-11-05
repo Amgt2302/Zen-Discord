@@ -96,7 +96,8 @@ main.chatContent_f75fb0,
 {
   background: var(--Color);
 }
-.chatGradientBase__36d07 {
+[class^="chatGradientBase__"]
+{
   display: none;
 }
 
@@ -148,9 +149,15 @@ main.chatContent_f75fb0,
   z-index: 102;
   backdrop-filter: blur(var(--blur));
 }
+/* User mention menu */
+[class^="autocomplete__"] {
+  z-index: 102;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--blur));
+}
 
 /* Send Bar */
-[class^="form_"] {
+  [class^="form_"] {
   margin-top: 1px;
 }
 

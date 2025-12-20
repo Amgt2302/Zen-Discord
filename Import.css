@@ -204,6 +204,13 @@ main[class*="chatContent"],
   backdrop-filter: blur(15px);
 }
 
+/* User mention menu */
+[class^="autocomplete__"] {
+  z-index: 102;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(var(--blur));
+}
+
 
 /* User mention menu */
 [class*="autocomplete"][class*="autocomplete "] 

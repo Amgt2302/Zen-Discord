@@ -1,4 +1,11 @@
 /*
+╭───────── Zen Discord ─────────╮
+│  Version: V1.0                │
+│  Author : AMGT2302            │
+│  GitHub : github.com/AMGT2302 │
+╰───────────────────────────────╯
+*/
+/*
 ╔═════════════════════════╗
 ║      Style Discord      ║
 ╚═════════════════════════╝
@@ -96,25 +103,35 @@ aside[class*="container"],
 [class*="sidebarList"] [class*="scroller"],
 
 
-/* Setting Page */
-[class*="contentBody"],
+
+/* Nitro Page */
+[class*="sectionsContainer__"],
+
+
+
+/*Orbs Popup*/
+.scroller__23746,
+[class*="modalContent__"],
+
 
 
 /* Shop Page */
 [class*="shop"],
 
 
+
 /* Chat */
 main[class*="chatContent"],
 [class*="members"],
 [class*="none"]
-
 {
   background: var(--Color);
 }
 
 /* Other */
-[class*="chatGradientBase"]
+/* gradient effect */
+[class*="chatGradientBase"],
+[class*="fixedContent_"]::after
 {
   display: none;
 }
@@ -180,8 +197,14 @@ main[class*="chatContent"],
 }
 
 
+/* |--Setting Page--| */
+.scroller__6131a
+/* ,[class*="scrollableContainer"] */
+{background: none;}
 
-/* |--Menu PopUp--|*/
+
+
+/* |--Menu PopUp--| */
 /*Camera Menu*/
 ._8a031a135bfcb9ba-container,
 
@@ -190,8 +213,8 @@ main[class*="chatContent"],
 #popout_2320 [class*="container"],
 
 
-/*Voice Details*/
-
+/*Gif menu*/
+.contentWrapper__08434, .header_fed6d3,
 
 /*Noise PopUp*/
 [class*="noiseCancellation"],
@@ -235,7 +258,7 @@ main[class*="chatContent"],
 
 /* Texte Visibility */
 [class*="c-container"] a{
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255); /*a tester*/
 }
 
 

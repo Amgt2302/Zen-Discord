@@ -1,11 +1,4 @@
 /*
-╭───────── Zen Discord ─────────╮
-│  Version: V1.0                │
-│  Author : AMGT2302            │
-│  GitHub : github.com/AMGT2302 │
-╰───────────────────────────────╯
-*/
-/*
 ╔═════════════════════════╗
 ║      Style Discord      ║
 ╚═════════════════════════╝
@@ -144,7 +137,7 @@ main[class*="chatContent"],
   z-index: 102;
   backdrop-filter: blur(20px);
 }
-[class*="panels"]:hover {
+[class*="panels_"]:hover {
   animation: 
     RainbowBorder calc(var(--animations-enabled) * 15s) linear infinite,
     RainbowShadow calc(var(--animations-enabled) * 15s) linear infinite;
@@ -152,20 +145,20 @@ main[class*="chatContent"],
   transform: translateY(-10px);
   transition: transform 0.3s ease;
 }
-[class*="avatarWrapper"]:hover {
+[class*="accountPopoutButtonWrapper"]:hover {
   animation: float calc(var(--animations-enabled) * 2s) linear infinite;
 }
 
 
 /* Icons */
 /* Micro */
-[class*="buttons"] > [class*="micButtonParent"]:nth-of-type(1) button:first-child:hover {
+[class*="buttons"] > [class*="audioButtonParent"]:nth-of-type(1) button:hover {
   animation: jump calc(var(--animations-enabled) * 0.8s) linear infinite;
   transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
 }
 
 /* HeadSet Button */
-[class*="buttons"] > [class*="micButtonParent"]:nth-of-type(2) button:first-child:hover {
+[class*="buttons"] > [class*="audioButtonParent"]:nth-of-type(2) button:hover {
   animation: swing calc(var(--animations-enabled) * 0.3s) ease-in-out infinite;
   transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
 }

@@ -1,18 +1,29 @@
-/*
-╭───────── Zen Discord ─────────╮
-│  Version: V1.0                │
-│  Author : AMGT2302            │
-│  GitHub : github.com/AMGT2302 │
-╰───────────────────────────────╯
-*/
+/**
+ * @name Zen Discord
+ * @author AMGT2302
+ * @version 2.0
+ * @description Frosted-glass Discord theme with custom wallpaper, RGB accents and animation
+ * @source https://github.com/AMGT2302/Zen-Discord
+ **/
+ 
+
 @import url("https://amgt2302.github.io/Zen-Discord/Import.css");
-
+ 
 :root {
-  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg");
-  --opacity: 0.25;
-  --blur: 2.5px;
-  --Color: rgba(0, 0, 0, 1);
-  --Color2: rgba(160, 20, 220, 0.6);
+  /* -- Appearance -- */
+  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.png");
+  --opacity: 0.35;                             /* wallpaper visibility (0 to 1) */
+  --Color: rgb(0, 0, 0);                     /* tint of the overlay and menus */
+  --Color2: rgba(25, 200, 220, 0.6);         /* accent: text selection, RGB frozen if animations are OFF */
 
-  --animations-enabled: 1; /* 1 = ON, 0 = OFF */
+  /* -- Menus (0 = transparent, 1 = opaque) -- */
+  --glass: 0.5;                                /* big menus: settings, profile, modals, GIF, apps */
+  --glass-small: 0.3;                          /* small menus: right click, audio, lists */
+  --menu-blur: 10px;                           /* blur behind menus (doubled in settings and profiles) */
+  --blur: 5px;                                 /* chat blur */
+
+  /* -- Animations & RGB (1 = ON, 0 = OFF) -- */
+  --animations-enabled: 1;
+  --search-rgb: 1;                             /* RGB on the search and message bars */
+  --rainbow-speed: 15s;                        /* duration of one rainbow cycle */
 }

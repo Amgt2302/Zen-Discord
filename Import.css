@@ -1,277 +1,265 @@
-/*
-╔═════════════════════════╗
-║      Style Discord      ║
-╚═════════════════════════╝
-*/
+/**
+ * |-- Zen Discord - Import.css --| *
+ * @name Zen Discord
+ * @author AMGT2302
+ * @version 2.0
+ * @description Frosted-glass Discord theme with custom wallpaper, RGB accents and animation
+ * @source https://github.com/AMGT2302/Zen-Discord
+ **/
+
+
+/* -- 1. VARIABLES -- */
+
+@property --rainbow { syntax: "<color>"; inherits: true; initial-value: violet; }
 
 :root {
-  --candy-cane: repeating-linear-gradient(
-    45deg,
-    red 0 6px,
-    white 6px 12px
-  );
+  /* Settings from Theme.css, with defaults */
+  --zd-anim:    var(--animations-enabled, 1);
+  --zd-rgb:     var(--search-rgb, 1);
+  --zd-speed:   var(--rainbow-speed, 15s);
+  --zd-blur:    var(--menu-blur, 10px);
+  --zd-accent:  var(--Color2, rgba(160, 20, 220, 0.6));
+  --zd-opacity: var(--opacity, 0.25);
+
+  /* Rainbow color (animated), stays on the accent when animations are off */
+  --rainbow:    var(--zd-accent);
+  --candy-cane: repeating-linear-gradient(45deg, red 0 6px, white 6px 12px);
+
+  /* Glass colors, tinted with --Color */
+  --zd-glass:      color-mix(in srgb, var(--Color, #000) calc(var(--glass, 0.45) * 100%), transparent);
+  --zd-panel:      color-mix(in srgb, var(--Color, #000) calc(var(--glass, 0.45) * 75%), transparent);
+  --zd-glass-dark: color-mix(in srgb, var(--Color, #000) calc(var(--glass-small, 0.8) * 100%), transparent);
+
+  /* Light tints for boxes inside glass */
+  --zd-tint-1: rgb(255 255 255 / 0.04);
+  --zd-tint-2: rgb(255 255 255 / 0.07);
+  --zd-tint-3: rgb(255 255 255 / 0.11);
+
+  /* Wallpaper with a color veil */
+  --zd-scrim: color-mix(in srgb, var(--Color, #000), transparent calc(var(--zd-opacity) * 100%));
+  --zd-wall:  linear-gradient(var(--zd-scrim), var(--zd-scrim)),
+              var(--background-image) center / cover no-repeat fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --zd-anim: 0; }
 }
 
 
+/* -- 2. ANIMATIONS -- */
 
-/* |-- Animation --| */
-@keyframes spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+@keyframes spin  { to { transform: rotate(360deg); } }
+@keyframes swing { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
+@keyframes jump  { 50% { transform: translateY(-5px); } }
+@keyframes float { 0%, 100% { transform: rotateZ(2deg); } 50% { transform: rotateZ(-2deg); } }
 
-@keyframes swing {
-  0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(10deg); }
-  100% { transform: rotate(-10deg); }
-}
-
-@keyframes jump {
-  0% {transform: translateY(0);}
-  50% {transform: translateY(-5px);}
-  100% {transform: translateY(0);}
-}
-
-@keyframes float {
-  0%, 100%  { transform: rotateZ(2deg); }
-  50%  { transform: rotateZ(-2deg); }
-}
-
-@keyframes RainbowBorder {
-  0%, 100%  { border-color: red; }
-  14%  { border-color: orange; }
-  28%  { border-color: yellow; }
-  42%  { border-color: green; }
-  57%  { border-color: cyan; }
-  71%  { border-color: blue; }
-  85%  { border-color: violet; }
-}
-@keyframes RainbowShadow {
-  0%, 100%  { box-shadow: 0 0 6px 2px red; }
-  14%  { box-shadow: 0 0 6px 2px orange; }
-  28%  { box-shadow: 0 0 6px 2px yellow; }
-  42%  { box-shadow: 0 0 6px 2px green; }
-  57%  { box-shadow: 0 0 6px 2px cyan; }
-  71%  { box-shadow: 0 0 6px 2px blue; }
-  85%  { box-shadow: 0 0 6px 2px violet; }
+@keyframes rainbow {
+  0%, 100% { --rainbow: red; }
+  14%      { --rainbow: orange; }
+  28%      { --rainbow: yellow; }
+  42%      { --rainbow: green; }
+  57%      { --rainbow: cyan; }
+  71%      { --rainbow: blue; }
+  85%      { --rainbow: violet; }
 }
 
 
+/* -- 3. DISCORD VARIABLES -- */
 
-/* |--Background Picture--| */
-#app-mount::after{
-  content: "";
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+/* Override Discord's variables (unknown names are ignored) */
+:is(.theme-dark, .theme-darker, .theme-midnight):not(#zd) {
+  /* Base backgrounds: transparent */
+  --background-base-lowest: transparent;
+  --background-base-lower: transparent;
+  --background-base-low: transparent;
+  --chat-background-default: transparent;
+  --bg-base-secondary: transparent;
+  --bg-base-tertiary: transparent;
+  --bg-overlay-app-frame: transparent;
+  --bg-overlay-chat: transparent;
+  --background-primary: transparent;
+  --background-secondary: transparent;
+  --background-secondary-alt: transparent;
+  --background-tertiary: transparent;
+  --modal-background: transparent;
+  --modal-footer-background: transparent;
+
+  /* Cards, popouts, inputs: glass */
+  --background-surface-high: var(--zd-glass);
+  --background-surface-higher: var(--zd-glass);
+  --background-surface-highest: var(--zd-glass);
+  --bg-surface-raised: var(--zd-glass);
+  --bg-surface-overlay: var(--zd-glass);
+  --background-floating: var(--zd-glass-dark);
+  --user-profile-overlay-background: var(--zd-glass);
+  --channeltextarea-background: var(--zd-glass);
+}
+
+
+/* -- 4. SURFACES -- */
+
+/* Wallpaper (other surfaces are transparent, see section 3) */
+body { background: var(--zd-wall); }
+
+[class*="chatGradientBase_"], [class*="fixedContent_"]::after { display: none; }
+
+[class*="messagesWrapper_"] { backdrop-filter: blur(var(--blur, 2.5px)); }
+form[class*="form_"]        { margin-top: 1px; }
+::selection                 { background: var(--zd-accent); }
+
+
+/* -- 5. MENUS -- */
+
+/* Large windows: modals, Go Live, activities, GIF/emoji pickers, apps */
+:is([role="dialog"][aria-modal="true"], [class*="focusLock_"] > [role="dialog"],
+    [role="dialog"]:has([class*="activityCard"], [class*="shelfSection"]),
+    [class*="drawerSizingWrapper_"], [class*="appLauncherPopup"]):not(#zd) {
+  background: var(--zd-panel);
+}
+
+/* Blur: popouts */
+:is([role="dialog"]:has([class*="activityCard"], [class*="shelfSection"]),
+    [class*="drawerSizingWrapper_"], [class*="appLauncherPopup"]):not(#zd) {
+  backdrop-filter: blur(var(--zd-blur));
+}
+
+/* Blur: modals, on the backdrop (on the modal it breaks the image viewer buttons) */
+[class*="backdrop_"]:not(#zd) {
+  backdrop-filter: blur(var(--zd-blur));
+}
+
+/* Inside these windows and settings: light tints instead of glass (avoids stacked black) */
+:is([role="dialog"][aria-modal="true"], [class*="focusLock_"] > [role="dialog"],
+    [role="dialog"]:has([class*="activityCard"], [class*="shelfSection"]),
+    [class*="drawerSizingWrapper_"], [class*="appLauncherPopup"],
+    [class*="standardSidebarView_"]) {
+  &:not(#zd), & :is(.theme-dark, .theme-darker, .theme-midnight):not(#zd) {
+    --background-surface-high: var(--zd-tint-1);
+    --background-surface-higher: var(--zd-tint-2);
+    --background-surface-highest: var(--zd-tint-3);
+    --bg-surface-raised: var(--zd-tint-2);
+    --background-mod-subtle: var(--zd-tint-1);
+    --background-mod-normal: var(--zd-tint-2);
+    --background-mod-strong: var(--zd-tint-3);
+    --background-floating: var(--zd-glass-dark);
+    --input-background: rgb(0 0 0 / 0.25);
+    --user-profile-overlay-background: var(--zd-tint-1);
+  }
+}
+
+/* Settings and full profiles: wallpaper with glass veil, blur on the columns */
+:is([class*="standardSidebarView_"], [role="dialog"][aria-modal="true"]:has([class*="rofile"])):not(#zd) {
+  background: linear-gradient(var(--zd-glass), var(--zd-glass)),
+              var(--background-image) center / cover fixed;
+  backdrop-filter: none;
+
+  & > *:not(#zd) {
+    background: transparent;
+    backdrop-filter: blur(calc(var(--zd-blur) * 2));
+  }
+}
+
+/* Profile popout */
+[role="dialog"]:not([aria-modal="true"]):has([class*="rofile"]):not(#zd) {
+  background: var(--zd-panel);
+  border-radius: 8px;
+}
+
+/* Small menus: lists, tooltips, / and @ commands (other popouts use --background-floating) */
+:is([role="listbox"], [role="tooltip"],
+    [class*="autocomplete_"]:not([class*="autocomplete_"] *)):not(#zd) {
+  background: var(--zd-glass-dark);
+  backdrop-filter: blur(var(--zd-blur));
+}
+
+/* Context menus: glass on ::before (blur on the menu itself breaks submenu blur) */
+[role="menu"]:not(#zd) {
+  isolation: isolate;  /* no position: it breaks image viewer toolbars */
   background: transparent;
-  background: var(--background-image) center/cover no-repeat fixed;
-  opacity: var(--opacity);
-  z-index: 101;
-  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--zd-glass-dark);
+    backdrop-filter: blur(var(--zd-blur));
+  }
 }
 
 
+/* -- 6. RGB: SEARCH BARS & MESSAGE BAR -- */
 
-/* |--Background Filter--| */
-/* Home */
-[class*="bg"],
-
-
-/* Bar */
-[class*="searchBar"],
-[class*="_9293f6b2fc12398a-container"],
-
-
-/* Friend Page */
-nav[class*="wrapper"],
-nav[class*="scroller"],
-[class*="footerButton"],
-[class*="peopleColumn"],
-aside[class*="container"],
-
-
-/* Server Page */
-[class*="sidebarList"] [class*="scroller"],
-
-
-
-/* Nitro Page */
-[class*="sectionsContainer__"],
-
-
-
-/*Orbs Popup*/
-.scroller__23746,
-[class*="modalContent__"],
-
-
-
-/* Shop Page */
-[class*="shop"],
-
-
-
-/* Chat */
-main[class*="chatContent"],
-[class*="members"],
-[class*="none"]
-{
-  background: var(--Color);
+/* Outline on the outermost frame only (no double outline) */
+:is([role="search"], [class*="searchBar_"], [class*="searchBox_"], [class*="search_"]:has(input),
+    :is(div, label):has(> svg):has(> input, > [class*="inputWrapper_"] > input),
+    [class*="scrollableContainer_"], [class*="channelTextArea_"], input[role="combobox"]):not(:is(
+      [role="search"], [class*="searchBar_"], [class*="searchBox_"], [class*="search_"],
+      div:has(> svg):has(> input, > [class*="inputWrapper_"] > input),
+      [class*="scrollableContainer_"], [class*="channelTextArea_"]) *):focus-within,
+[class*="searchBar_"]:not([class*="searchBar_"] *):hover {
+  outline: calc(2px * var(--zd-rgb)) solid var(--rainbow);
+  outline-offset: -2px;
+  animation: rainbow calc(var(--zd-anim) * var(--zd-speed)) linear infinite;
 }
 
-/* Other */
-/* gradient effect */
-[class*="chatGradientBase"],
-[class*="fixedContent_"]::after
-{
-  display: none;
-}
+[class*="searchBar_"]:not([class*="searchBar_"] *) { border-radius: 12px; }
 
 
+/* -- 7. STREAMS & CAMERAS -- */
 
-/* |--User area--| */
-[class*="panels"] {
+/* Call without video: transparent, wallpaper visible */
+:is([class*="callContainer_"], [class*="wrapper_"]:has(> [class*="callContainer_"]),
+    [class*="callContainer_"] > [class*="root_"]):not(:has(video), #zd) {
   background: transparent;
-  z-index: 102;
+}
+
+/* Video tiles: black */
+:is([data-selenium-video-tile], [class*="videoWrapper_"], [class*="callContainer_"],
+    [class*="stageWrapper_"]):has(video):not(#zd),
+:is([data-selenium-video-tile], [class*="callContainer_"], [class*="videoWrapper_"]) video {
+  background: #000;
+}
+
+
+/* -- 8. USER AREA -- */
+
+
+[class*="panels_"] {
+  background: var(--zd-glass);
   backdrop-filter: blur(20px);
-}
-[class*="panels_"]:hover {
-  animation: 
-    RainbowBorder calc(var(--animations-enabled) * 15s) linear infinite,
-    RainbowShadow calc(var(--animations-enabled) * 15s) linear infinite;
-  
-  transform: translateY(-10px);
-  transition: transform 0.3s ease;
-}
-[class*="accountPopoutButtonWrapper"]:hover {
-  animation: float calc(var(--animations-enabled) * 2s) linear infinite;
+  border: 2px solid transparent;  /* keeps layout stable on hover */
+  border-radius: 8px;
+
+  &:hover {
+    border-color: var(--rainbow);
+    box-shadow: 0 0 6px 2px var(--rainbow);
+    animation: rainbow calc(var(--zd-anim) * var(--zd-speed)) linear infinite;
+  }
 }
 
-
-/* Icons */
-/* Micro */
-[class*="buttons"] > [class*="audioButtonParent"]:nth-of-type(1) button:hover {
-  animation: jump calc(var(--animations-enabled) * 0.8s) linear infinite;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
-}
-
-/* HeadSet Button */
-[class*="buttons"] > [class*="audioButtonParent"]:nth-of-type(2) button:hover {
-  animation: swing calc(var(--animations-enabled) * 0.3s) ease-in-out infinite;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
-}
-
-/* Setting Button */
-[class*="buttons"] > button:last-of-type:hover {
-  animation: spin calc(var(--animations-enabled) * 1s) linear infinite;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+/* Mic, headset and settings buttons */
+[class*="buttons_"]:has(> [class*="audioButtonParent_"]) {
+  & > [class*="audioButtonParent_"]:nth-of-type(1) button:hover { animation: jump  calc(var(--zd-anim) * 0.8s) linear infinite; }
+  & > [class*="audioButtonParent_"]:nth-of-type(2) button:hover { animation: swing calc(var(--zd-anim) * 0.3s) ease-in-out infinite; }
+  & > button:last-of-type:hover                                 { animation: spin  calc(var(--zd-anim) * 1s) linear infinite; }
 }
 
 
+/* -- 9. SCROLLBARS -- */
 
-/* |--Chat--| */
-/*Back Content*/
-[class*="messagesWrapper"] {
-  z-index: 102;
-  backdrop-filter: blur(var(--blur));
+
+:is([class*="scroller_"], [class*="scrollerBase_"]) {
+  &::-webkit-scrollbar             { width: 6px; }
+  &::-webkit-scrollbar-thumb       { background: var(--candy-cane); border: 1px solid #f0f0f0; border-radius: 6px; }
+  &::-webkit-scrollbar-thumb:hover { background: linear-gradient(#0008, #0008), var(--candy-cane); }
 }
 
 
-/* Send Bar */
-[class*="form"] {
-  margin-top: 1px;
-}
-[class*="scrollableContainer"]:focus-within {
-  border-width: 2px;
-  border-style: solid;
-  animation: RainbowBorder calc(var(--animations-enabled) * 15s) linear infinite;
-}
+/* -- 10. PLUGINS -- */
 
+/* Spotify player (Vencord plugin): no extra layer */
+#vc-spotify-player:not(#zd) { background: transparent; }
 
-/* |--Setting Page--| */
-.scroller__6131a
-/* ,[class*="scrollableContainer"] */
-{background: none;}
-
-
-
-/* |--Menu PopUp--| */
-/*Camera Menu*/
-._8a031a135bfcb9ba-container,
-
-
-/*Ping menu*/
-#popout_2320 [class*="container"],
-
-
-/*Gif menu*/
-.contentWrapper__08434, .header_fed6d3,
-
-/*Noise PopUp*/
-[class*="noiseCancellation"],
-
-
-/*Sound Box*/
-[class*="picker"],
-[class*="soundButton"],
-[class*="sectionContainer"] {
-  background: transparent;
-  backdrop-filter: blur(15px);
-}
-
-/* User mention menu */
-[class^="autocomplete__"] {
-  z-index: 102;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(var(--blur));
-}
-
-
-/* User mention menu */
-[class*="autocomplete"][class*="autocomplete "] 
-{
-  z-index: 102;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(var(--blur));
-}
-
-
-
-/* |--Other--| */
-/* ShearchBar Effect */
-[class*="searchBar"]:focus-within {
-  border-width: 2px;
-  border-radius: 12px;
-  border-style: solid;
-  animation: RainbowBorder calc(var(--animations-enabled) * 15s) linear infinite;
-}
-
-
-/* Texte Visibility */
-[class*="c-container"] a{
-  color: rgb(255, 255, 255); /*a tester*/
-}
-
-
-/*Border*/
-[class*="sidebarResizeHandle"] {
-
-}
-
-
-/*|-- Scroll-Bar --|*/
-[class*="scroller"]::-webkit-scrollbar {
-  width: 6px;
-}
-[class*="scroller"]::-webkit-scrollbar-thumb {
-  background: var(--candy-cane);
-  border-radius: 6px;
-  border: 1px solid #f0f0f0;
-}
-[class*="scroller"]::-webkit-scrollbar-thumb:hover {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.5)), 
-    var(--candy-cane) !important;
-}
+[class*="accountPopoutButtonWrapper_"]:hover { animation: float calc(var(--zd-anim) * 2s) linear infinite; }

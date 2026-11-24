@@ -2,74 +2,79 @@
 
 [![Preview](https://img.shields.io/badge/Preview-5865F2?logo=Discord&style=for-the-badge&labelColor=black)](https://gibbu.github.io/ThemePreview/?file=https://amgt2302.github.io/Zen-Discord/Theme.css)
 
-🎨 Un thème Discord épuré, personnalisé, avec fond d’écran.
+🎨 A clean Discord theme with a frosted-glass look and a custom wallpaper.
 
 ---
 
 ## 📦 Installation
 
-> ⚠️ Nécessite [Vencord](https://vencord.dev/download/) installé au préalable !
+> ⚠️ Requires [Vencord](https://vencord.dev/download/) or [Vesktop](https://vesktop.dev/install/) to be installed first!
 
-  1. Ouvre Discord. 
-  2. Va dans les **"Paramètres utilisateur"** → **"vencord"** → **"Theme"** → **"Edit QuickCSS"**.
-  3. Copie-colle **tout le contenu** ci-dessous :
+> 🌙 This theme is made for Discord's dark themes. Go to **User Settings** → **Appearance** and choose **Ash** (recommended, best with the default settings). **Dark** and **Onyx** also work. Do not use **Light !**.
+
+### Option A — Quick (default settings)
+
+1. Open Discord.
+2. Go to **User Settings** → **"Vencord Settings"** → **Themes** → **"Online Themes"**.
+3. Paste this link and save:
+
+```
+https://amgt2302.github.io/Zen-Discord/Theme.css
+```
+
+### Option B — Customizable
+
+1. Open Discord.
+2. Go to **User Settings** → **"Vencord Settings"** → **Themes** → **"Local Themes"** → **Edit QuickCSS**.
+3. Copy and paste **the whole block** below:
 
 ```css
-/*
-╭───────── Zen Discord ─────────╮
-│  Version: V1.0                │
-│  Author : AMGT2302            │
-│  GitHub : github.com/AMGT2302 │
-╰───────────────────────────────╯
-*/
 @import url("https://amgt2302.github.io/Zen-Discord/Import.css");
 
 :root {
-  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg");
-  --opacity: 0.25;
-  --blur: 2.5px;
-  --Color: rgba(0, 0, 0, 1);
-  --Color2: rgba(160, 20, 220, 0.8);
+  /* -- Appearance -- */
+  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.png");
+  --opacity: 0.35;                  /* wallpaper visibility (0 to 1) */
+  --Color: rgb(0, 0, 0);            /* tint of the overlay and menus */
+  --Color2: rgba(25, 200, 220, 0.6);/* accent: text selection, RGB frozen if animations are OFF */
 
-  --animations-enabled: 1; /* 1 = ON, 0 = OFF */
-}
-```
-Ou [clic ici](https://amgt2302.github.io/Zen-Discord/Theme.css).
+  /* -- Menus (0 = transparent, 1 = opaque) -- */
+  --glass: 0.5;                     /* big menus: settings, profile, modals, GIF, apps */
+  --glass-small: 0.3;               /* small menus: right click, audio, lists */
+  --menu-blur: 10px;                /* blur behind menus (doubled in settings and profiles) */
+  --blur: 5px;                      /* chat blur */
 
----
-
-## 🎨 Personnalisation
-
-Dans `Theme.css`, tu peux modifier ces variables dans :
-
-```css
-:root {
-  --background-image: url("https://amgt2302.github.io/Zen-Discord/asset/Default.jpg"); /*Background Url*/
-  --opacity: 0.25; /*Default 0.25*/
-  --blur: 2.5px; /*Adjust Blur*/
-  --Color: rgba(0, 0, 0, 1); /*Filter Color*/
-  --Color2: rgba(160, 20, 220, 0.8); /*Border color*/
-
-  --animations-enabled: 1; /* 1 = ON, 0 = OFF */
+  /* -- Animations & RGB (1 = ON, 0 = OFF) -- */
+  --animations-enabled: 1;
+  --search-rgb: 1;                  /* RGB on the search and message bars */
+  --rainbow-speed: 15s;             /* duration of one rainbow cycle */
 }
 ```
 
-## 📄 Credits & Rights
-
-**Made by :** Amgt2302  
-**Realization :** 2025
-
-🛡️ *This project is an original creation.*
-
-It is shared publicly for discovery, inspiration, or demonstration purposes.  
-However, **any reuse, modification, or redistribution of the code** is prohibited.  
-**Any commercial use or resale** is prohibited.
-
-
-Have fun, but remember to respect the copyright and don't remove it! 😄
-
 ---
 
-```
-All rights reserved © Amgt2302 - 2025
-```
+## 🎨 Customization
+
+With **Option B**, change the values in the `:root` block directly in your **QuickCSS**, then save. The theme updates right away.
+
+For example, to make the wallpaper more visible, change `--opacity: 0.35;` to `--opacity: 0.5;`.
+
+To use your own wallpaper, replace the `--background-image` link with the link of your image.
+
+> ⚠️ If your image is hosted on another website, Discord may block it. In that case, Vencord asks you to **allow** the link: accept, then **restart Discord**.
+
+## 📄 Credits & License
+
+**Made by :** Amgt2302 — 2025
+
+This project is licensed under [**CC BY-NC-ND 4.0**](LICENSE).
+
+| | |
+|---|---|
+| ✅ | Use it and customize the settings (colors, animations...) for your own Discord |
+| ✅ | Share the original project, with credit to **Amgt2302** and a link to this repo |
+| ❌ | No republishing the code (modified or not) under another name or in another repo |
+| ❌ | No selling, no commercial use, no profit made from it |
+| | |
+
+Have fun! 😄

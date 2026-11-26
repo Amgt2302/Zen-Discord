@@ -172,6 +172,12 @@ form[class*="form_"]        { margin-top: 1px; }
   backdrop-filter: blur(var(--zd-blur));
 }
 
+/* Search menu (dropdown under the search bar): darker glass, stronger blur */
+[role="listbox"]:has([class*="groupWrapper_"] [class*="itemContainer_"]):not(#zd) {
+  background: var(--zd-glass);
+  backdrop-filter: blur(calc(var(--zd-blur) * 2));
+}
+
 /* Context menus: glass on ::before (blur on the menu itself breaks submenu blur) */
 [role="menu"]:not(#zd) {
   isolation: isolate;  /* no position: it breaks image viewer toolbars */
@@ -198,6 +204,8 @@ form[class*="form_"]        { margin-top: 1px; }
       [role="search"], [class*="searchBar_"], [class*="searchBox_"], [class*="search_"],
       div:has(> svg):has(> input, > [class*="inputWrapper_"] > input),
       [class*="scrollableContainer_"], [class*="channelTextArea_"]) *):focus-within,
+/* CHANGED - Top right search bar: rainbow outline when focused */
+[class*="search_"] > [class*="searchBar_"]:focus-within:not(#zd),
 [class*="searchBar_"]:not([class*="searchBar_"] *):hover {
   outline: calc(2px * var(--zd-rgb)) solid var(--rainbow);
   outline-offset: -2px;
